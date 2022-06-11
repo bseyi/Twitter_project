@@ -46,8 +46,6 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/bseyi/Twitter_project/blob/master/tMootO_h.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [Kap](https://getkap.co/).
-
 
 ## Open-source libraries used
 
