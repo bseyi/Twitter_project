@@ -80,13 +80,8 @@ public class TimelineActivity extends AppCompatActivity {
         commentBtn = findViewById(R.id.reply_button);
 
 
-        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                fetchTimelineAsync(0);
-            }
-        });
+        swipeContainer = findViewById(R.id.swipeContainer);
+        swipeContainer.setOnRefreshListener(() -> fetchTimelineAsync(0));
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
