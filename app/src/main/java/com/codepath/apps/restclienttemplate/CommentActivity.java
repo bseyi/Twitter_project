@@ -66,14 +66,15 @@ public class CommentActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(int statusCode, Headers headers, JSON json) {
                         Intent i = new Intent(CommentActivity.this, TimelineActivity.class);
+                        Toast.makeText(CommentActivity.this, "Reply successful", Toast.LENGTH_SHORT).show();
                         startActivity(i);
                     }
 
                     @Override
                     public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-                        Toast.makeText(CommentActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CommentActivity.this, "Reply unsuccessful", Toast.LENGTH_SHORT).show();
                     }
-                }, tweet.tweet_id);
+                }, tweet.tweetId);
 
             }
         });

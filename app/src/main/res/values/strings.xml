@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">SimpleTweet</string>
     <string name="login_label">Log in</string>
-    <string name="intent_scheme">pauth</string>
-    <string name="intent_host">cprest</string>
+    <string name="intent_scheme">path</string>
+    <string name="intent_host">crest</string>
     <string name="tweet">Tweet</string>
 
 </resources>

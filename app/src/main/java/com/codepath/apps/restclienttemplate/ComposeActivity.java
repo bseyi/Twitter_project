@@ -2,6 +2,7 @@ package com.codepath.apps.restclienttemplate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,7 @@ public class ComposeActivity extends AppCompatActivity {
     Button btnTweet;
 
     TwitterClient client;
+    Context context;
 
 
     @Override

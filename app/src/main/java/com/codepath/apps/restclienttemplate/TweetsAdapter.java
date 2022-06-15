@@ -30,8 +30,9 @@ import java.util.Locale;
 
 public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder>{
 
-    Context context;
-    List<Tweet> tweets;
+    private Context context;
+    private List<Tweet> tweets;
+    private final int RADIUS = 68;
 
     private static final int SECOND_MILLIS = 1000;
     private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
@@ -105,11 +106,11 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
             timeAgo.setText(getRelativeTimeAgo(tweet.createdAt));
-            replyCount.setText(tweet.Reply_count);
-            retweetCount.setText(tweet.Retweet_count);
-            likeCount.setText((tweet.Like_count));
+            replyCount.setText(tweet.replyCount);
+            retweetCount.setText(tweet.retweetCount);
+            likeCount.setText((tweet.likeCount));
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
-            Glide.with(context).load(tweet.user.profileImageUrl).transform(new RoundedCorners(68)).into(ivProfileImage);
+            Glide.with(context).load(tweet.user.profileImageUrl).transform(new RoundedCorners(RADIUS)).into(ivProfileImage);
 
             if (tweet.imageUrl != ""){
                 itemTweet_image.setVisibility(View.VISIBLE);

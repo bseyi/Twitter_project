@@ -88,7 +88,7 @@ public class TimelineActivity extends AppCompatActivity {
                 android.R.color.holo_red_light);
 
 
-        populateHoneTimeline();
+        populateHomeTimeline();
 
     }
 
@@ -98,7 +98,7 @@ public class TimelineActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 adapter.clear();
-                populateHoneTimeline();
+                populateHomeTimeline();
 
                 adapter.addAll(tweets);
                 swipeContainer.setRefreshing(false);
@@ -139,12 +139,13 @@ public class TimelineActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void populateHoneTimeline() {
+    private void populateHomeTimeline() {
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 JSONArray jsonArray = json.jsonArray;
                 try {
+                    adapter.addAll(tweets);
                     tweets.addAll(Tweet.fromJsonArray(jsonArray));
                     adapter.notifyDataSetChanged();
                 }

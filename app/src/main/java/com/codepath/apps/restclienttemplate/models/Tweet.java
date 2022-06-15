@@ -14,11 +14,11 @@ public class Tweet {
     public String createdAt;
     public User user;
     public String imageUrl;
-    public String Retweet_count;
-    public String Reply_count;
-    public String Like_count;
+    public String retweetCount;
+    public String replyCount;
+    public String likeCount;
     public String time;
-    public long tweet_id;
+    public long tweetId;
 
     public Tweet(){}
 
@@ -27,10 +27,10 @@ public class Tweet {
         tweet.body = jsonObject.getString("text");
         tweet.createdAt = jsonObject.getString("created_at");
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
-        tweet.Retweet_count = jsonObject.getString("retweet_count");
-        tweet.Reply_count = jsonObject.getString("favorite_count");
-        tweet.Like_count = jsonObject.getString("favorite_count");
-        tweet.tweet_id = jsonObject.getLong("id");
+        tweet.retweetCount = jsonObject.getString("retweet_count");
+        tweet.replyCount = jsonObject.getString("favorite_count");
+        tweet.likeCount = jsonObject.getString("favorite_count");
+        tweet.tweetId = jsonObject.getLong("id");
 
         tweet.imageUrl = "";
         if(jsonObject.has("full_text")){
